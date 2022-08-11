@@ -1,0 +1,41 @@
+DATASET:
+  imgMaxSize: 512
+  imgSizes: (300, 375, 450, 525, 600)
+  list_train: ./data/training.odgt
+  list_val: ./data/validation.odgt
+  num_class: 3
+  padding_constant: 32
+  random_flip: True
+  root_dataset: ./data/
+  segm_downsampling_rate: 4
+DIR: ckpt/ade20k-hrnetv2-c1
+MODEL:
+  arch_decoder: c1
+  arch_encoder: hrnetv2
+  fc_dim: 720
+  weights_decoder: 
+  weights_encoder: 
+TEST:
+  batch_size: 1
+  checkpoint: epoch_1.pth
+  result: ./
+TRAIN:
+  batch_size_per_gpu: 14
+  beta1: 0.9
+  deep_sup_scale: 0.4
+  disp_iter: 20
+  epoch_iters: 2000
+  fix_bn: False
+  lr_decoder: 0.002
+  lr_encoder: 0.002
+  lr_pow: 0.9
+  num_epoch: 30
+  optim: SGD
+  seed: 304
+  start_epoch: 0
+  weight_decay: 0.0001
+  workers: 16
+VAL:
+  batch_size: 1
+  checkpoint: epoch_3.pth
+  visualize: True

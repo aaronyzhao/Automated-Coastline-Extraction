@@ -1,0 +1,7 @@
+python3 train.py --gpus GPUS --cfg config/ade20k-hrnetv2.yaml
+
+python "train.py" "--gpus" "0" "--cfg" "config/ade20k-hrnetv2.yaml"
+
+python3 eval_multipro.py --gpus GPUS --cfg config/ade20k-hrnetv2.yaml
+
+python "eval_multipro.py" "--gpus" "0" "--cfg" "config/ade20k-hrnetv2.yaml"
